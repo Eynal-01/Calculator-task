@@ -56,13 +56,13 @@ namespace Calculator_task
                     Result.Text = (value + double.Parse(Result.Text)).ToString();
                     break;
                 case "-":
-                    Result.Text = (value + double.Parse(Result.Text)).ToString();
+                    Result.Text = (value - double.Parse(Result.Text)).ToString();
                     break;
-                case "*":
-                    Result.Text = (value + double.Parse(Result.Text)).ToString();
+                case "x":
+                    Result.Text = (value * double.Parse(Result.Text)).ToString();
                     break;
                 case "/":
-                    Result.Text = (value + double.Parse(Result.Text)).ToString();
+                    Result.Text = (value / double.Parse(Result.Text)).ToString();
                     break;
                 default:
                     break;

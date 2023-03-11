@@ -19,10 +19,7 @@ namespace Calculator_task
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
         private void button_Click(object sender, EventArgs e)
         {
             if ((Result.Text == "0") || (operation_pressed))
@@ -46,26 +43,31 @@ namespace Calculator_task
             operation_pressed = true;
             equation.Text = value + " " + operation;
         }
-
+        enum Operators
+        {
+            Plus,
+            Minus,
+            Division,
+            Multiplication
+        }
         private void equalbtn_Click(object sender, EventArgs e)
         {
             equation.Text = "";
-            switch (operation)
+            if (operation == "+")
             {
-                case "+":
-                    Result.Text = (value + double.Parse(Result.Text)).ToString();
-                    break;
-                case "-":
-                    Result.Text = (value - double.Parse(Result.Text)).ToString();
-                    break;
-                case "x":
-                    Result.Text = (value * double.Parse(Result.Text)).ToString();
-                    break;
-                case "/":
-                    Result.Text = (value / double.Parse(Result.Text)).ToString();
-                    break;
-                default:
-                    break;
+                Result.Text = (value + double.Parse(Result.Text)).ToString();
+            }
+            else if (operation == "-")
+            {
+                Result.Text = (value - double.Parse(Result.Text)).ToString();
+            }
+            else if (operation == "x")
+            {
+                Result.Text = (value * double.Parse(Result.Text)).ToString();
+            }
+            else if (operation == "/")
+            {
+                Result.Text = (value / double.Parse(Result.Text)).ToString();
             }
         }
         private void Cbtn_Click(object sender, EventArgs e)
